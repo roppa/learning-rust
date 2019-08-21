@@ -12,8 +12,8 @@ Why Rust? Type safety, concurrency, blazingly fast.Rust has a steep learning cur
 
 Rust has an opinionated coding style:
 
- - indentations are 4 spaces
- - variable names are snake case
+- indentations are 4 spaces
+- variable names are snake case
 
 But, before fundamentals, lets talk about the build runner, documentation generator, test runner and package manager - Cargo.
 
@@ -124,7 +124,7 @@ We'll come back to strings.
 
 `const` always uses SCREAMING snake case, and you MUST specify type. Consts are really fast to access. You can use them 'globally' i.e. outside functions.
 
-```
+```rust
 const UNCHANGING:u32 = 123;
 println!("Const value is {}", UNCHANGING);
 ```
@@ -162,7 +162,7 @@ fn [snake_case function name]([param :type]) -> [return type]
 
 For example:
 
-```
+```rust
 fn volume(x: i32, y: i32, z: i32) -> i32 {
     return x * y * z;
 }
@@ -171,7 +171,7 @@ fn volume(x: i32, y: i32, z: i32) -> i32 {
 
 With the returned value, if you leave off the trailing semicolon of an expression, that value gets returned. (remember, an expression is anything that results in a value).
 
-```
+```rust
 fn volume(x: i32, y: i32, z: i32) -> i32 {
     x * y * z
 }
