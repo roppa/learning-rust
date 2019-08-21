@@ -4,9 +4,9 @@ One of the first things I like to do after gaining some familiarity with a langu
 
 ## Definitions
 
-Rust is a (system language)[https://en.wikipedia.org/wiki/System_programming_language], meaning it can be used for low level stuff such as Operating Systems, hardware and the like. That doesn't mean it is limited to those however.
+Rust is a [system language](https://en.wikipedia.org/wiki/System_programming_language), meaning it can be used for low level stuff such as Operating Systems, hardware and the like. That doesn't mean it is limited to those however.
 
-Why Rust? Type safety, concurrency, blazingly fast.Rust has a steep learning curve however.
+Why Rust? Type safety, concurrency, blazingly fast. Rust has a steep learning curve however.
 
 ## Style
 
@@ -72,7 +72,7 @@ The genesis of your project is the `main` function. This is what is executed whe
 fn main() {}
 ```
 
-Functions are delcaried with a `fn` then name, parenthesis, then the body is in braces.
+Functions are declared with a `fn` then name, parenthesis, then the body is in braces.
 
 ## Types
 
@@ -88,7 +88,7 @@ A char is 4 bytes, a scalar, differing from a character within a string, which i
 
 Tuple stores multiple values, accessed by dot syntax (maximum of 12):
 
-```
+```rust
 let a = (1, 2, 3);
 println!("{}, {}, {}", a.0, a.1, a.2);
 ```
@@ -97,7 +97,7 @@ Arrays are limited to 32 length. Vectors are preferred over Arrays.
 
 ## Variables
 
-Variables are immutable in Rust, however, you can mutate them. Variables are declared using `let`. So Rust is strongly typed, but if it can deduce what the variable is, it will automatically create that type for you.
+Variables are immutable in Rust, however, you can mutate them by declaring using `let mut`. Rust is strongly typed, but if it can deduce what the variable is, it will automatically create that type for you.
 
 ```rust
 let [mut] [variable-name][: type] = [value];
