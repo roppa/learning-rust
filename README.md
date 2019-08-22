@@ -137,6 +137,28 @@ You can destructure values and assign like this:
 let (var1, var2) = (1, 2);
 ```
 
+## Structs
+
+Structs are types that you define. You can access the attributes of the data type using dot notation.
+
+```rust
+struct User {
+    name: String,
+    email: String,
+    age: i32
+}
+
+fn main() {
+    let bob = User{
+        name: "Bob".to_string(),
+        email: "bob@bobbity.com".to_string(),
+        age: 32
+    };
+
+    println!("Bob is: {}, {}, {}", bob.name, bob.email, bob.age);
+}
+```
+
 ## Help from the Compiler
 
 When you get compile errors, Rust gives you a handy explain command: `rustc --explain E0384`. Run that to get more information on the error. Pretty useful stuff.
@@ -199,10 +221,28 @@ https://crates.io/
 
 ## Command line
 
+To access args you can use `std::env::args()`. This gets them once the program is called:
+
 ```rust
 let args: Vec<String> = std::env::args().skip(1).collect();
 println!("{:?}", args);
 ```
+
+This loops over input:
+
+```rust
+use std::io;
+use std::io::prelude::*;
+
+fn main() {
+    let stdin = io::stdin();
+    for line in stdin.lock().lines() {
+        let input = line.unwrap();
+        println!("you entered {}", input);
+    }
+}
+```
+
 
 ## Resources
 
