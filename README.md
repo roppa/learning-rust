@@ -95,6 +95,8 @@ println!("{}, {}, {}", a.0, a.1, a.2);
 
 Arrays are limited to 32 length. Vectors are preferred over Arrays.
 
+To inspect an array use `println!("{:?}", arr);`.
+
 ## Variables
 
 Variables are immutable in Rust, however, you can mutate them by declaring using `let mut`. Rust is strongly typed, but if it can deduce what the variable is, it will automatically create that type for you.
@@ -194,6 +196,13 @@ Like all good languages, testing is built in to Rust.
 https://crates.io/
 
 ## Ownership and References
+
+## Command line
+
+```rust
+let args: Vec<String> = std::env::args().skip(1).collect();
+println!("{:?}", args);
+```
 
 ## Resources
 
