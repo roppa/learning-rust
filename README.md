@@ -203,9 +203,66 @@ fn volume(x: i32, y: i32, z: i32) -> i32 {
 
 Note: you know the `println!`, see the exclamation mark? That is a 'macro'. A macro is a type of function (more later). You can use macros when you do not have a fixed arity.
 
+## Operators and Control Flow
+
+Operators are just like C like languges, such as `+`, `-`, `!`, `&&`, `||`, `==`.
+
+Rust does not have a ternery operator because of the way if/else logic works. Notice there is no semi-colon, meaning the expression is returned. For example:
+
+```rust
+let toggle = if toggle == 0 { 1 } else { 0 };
+```
+
+Remember in TDD you start off with an if/else for one condition, then change it into a while/for etc. Look Mom, no brackets.
+
+```rust
+let n = 0;
+if n == 0 {
+    println!("Oh");
+} else {
+    println!("Uh oh");
+}
+```
+
 ## Loops
 
-- [Rust loops](https://doc.rust-lang.org/1.6.0/book/loops.html)
+Infinite loop is:
+
+```rust
+print!("N");
+loop {
+    print!("o");
+}
+```
+
+To escape, use `break`.
+
+While:
+
+```rust
+let mut n = 0;
+while n < 10 {
+    n += 1;
+}
+```
+
+For:
+
+```rust
+for x in 1..101 {
+    if x % 3 == 0 && x % 5 == 0 {
+        result = format!("{}{}\n", result, "FizzBuzz");
+    } else if x % 5 == 0 {
+        result = format!("{}{}\n", result, "Buzz");
+    } else if x % 3 == 0 {
+        result = format!("{}{}\n", result, "Fizz");
+    } else {
+        result = format!("{}{}\n", result, x.to_string());
+    }
+}
+```
+
+There are iterators too which we'll come to later.
 
 ## Libraries
 
@@ -243,7 +300,6 @@ fn main() {
 }
 ```
 
-
 ## Resources
 
 - [Actix api framework](https://actix.rs)
@@ -251,3 +307,4 @@ fn main() {
 ## References
 
 - [CleanCut Rust corse](https://github.com/CleanCut/rust_programming/)
+- [Rust loops](https://doc.rust-lang.org/1.6.0/book/loops.html)
