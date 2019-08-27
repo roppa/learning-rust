@@ -194,46 +194,46 @@ mod tests {
 }
 
 fn numeralise(number: u32) -> String {
-  let mut numeral: String = "".to_string();
+  let mut numeral = String::from("");
   let mut counter = number;
   while counter > 0 {
     if counter < 4 {
-      numeral = [numeral, "I".to_string()].join("");
+      numeral.push_str("I");
       counter -= 1;
     } else if counter == 4 {
-      numeral = [numeral, "IV".to_string()].join("");
+      numeral.push_str("IV");
       counter -= 4;
     } else if counter == 9 {
-      numeral = [numeral, "IX".to_string()].join("");
+      numeral.push_str("IX");
       counter -= 9;
     } else if counter >= 1000 {
-      numeral = [numeral, "M".to_string()].join("");
+      numeral.push_str("M");
       counter -= 1000;
     }  else if counter >= 900 {
-      numeral = [numeral, "CM".to_string()].join("");
+      numeral.push_str("CM");
       counter -= 900;
     } else if counter >= 500 {
-      numeral = [numeral, "D".to_string()].join("");
+      numeral.push_str("D");
       counter -= 500;
     } else if counter >= 400 {
-      numeral = [numeral, "CD".to_string()].join("");
+      numeral.push_str("CD");
       counter -= 400;
     } else if counter >= 100 {
-      numeral = [numeral, "C".to_string()].join("");
+      numeral.push_str("C");
       counter -= 100;
     } else if counter >= 90 {
-      numeral = [numeral, "XC".to_string()].join("");
+      numeral.push_str("XC");
       counter -= 90;
     } else if counter >= 50 {
-      numeral = [numeral, "L".to_string()].join("");
+      numeral.push_str("L");
       counter -= 50;
     } else if counter >= 10 {
-      numeral = [numeral, "X".to_string()].join("");
+      numeral.push_str("X");
       counter -= 10;
     } else if counter >= 5 {
-      numeral = [numeral, "V".to_string()].join("");
+      numeral.push_str("V");
       counter -= 5;
     }
   }
-  return numeral;
+  return numeral.to_string();
 }
