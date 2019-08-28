@@ -1,5 +1,5 @@
 [package]
-name = "roman-numerals"
+name = "roman_numerals"
 version = "0.1.0"
 authors = ["Mark Robson <mark.o.robson@gmail.com>"]
 edition = "2018"

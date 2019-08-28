@@ -193,7 +193,10 @@ mod tests {
     }
 }
 
-fn numeralise(number: u32) -> String {
+pub fn numeralise(number: i32) -> String {
+  if number > 3999 {
+    panic!("number must be below 4000");
+  }
   let mut numeral = String::from("");
   let mut counter = number;
   while counter > 0 {
