@@ -2,6 +2,15 @@
 
 One of the first things I like to do after gaining some familiarity with a language is a couple of katas, maybe Blackjack, an API of some sort. All test driven of course. Thats what we'll do here.
 
+What I find sorely missing in education is hierarchy of importances. Most resources give you every single bit of data related to a subject with equal stress. For example, with a written language a hierarchy of inportances would be:
+
+- alphabet
+- words
+- grammar
+- structure
+
+So, for a new language I first learn the alphabet (operators), words (reserved words), grammar (syntax), structure (files, modules, tests).
+
 ## Definitions
 
 Rust is a [system language](https://en.wikipedia.org/wiki/System_programming_language), meaning it can be used for low level stuff such as Operating Systems, hardware and the like. That doesn't mean it is limited to those however.
@@ -56,7 +65,7 @@ fn main() {
 }
 ```
 
-First things first, the Cargo.toml file. This is the configuration file for your software. This has all the information about your project, the name, authors, version (semver) etc. It is also where you add your dependencies.
+First things first, the Cargo.toml file. This is the configuration file for your software. This has all the information about your project, the name, authors, version (semver), project name (used when imporiting files) etc. It is also where you add your dependencies.
 
 The rust file that is generated is a 'hello world' by default.
 
@@ -205,7 +214,7 @@ Note: you know the `println!`, see the exclamation mark? That is a 'macro'. A ma
 
 ## Operators and Control Flow
 
-Operators are just like C like languges, such as `+`, `-`, `!`, `&&`, `||`, `==`.
+Operators are just like C like languges, such as `+`, `-`, `!`, `&&`, `||`, `==`, `%`.
 
 Rust does not have a ternery operator because of the way if/else logic works. Notice there is no semi-colon, meaning the expression is returned. For example:
 
@@ -264,17 +273,35 @@ for x in 1..101 {
 
 There are iterators too which we'll come to later.
 
-## Libraries
+## Important files
+
+The important files are: `main.rs`, `lib.rs` and `mod.rs`.
+
+`main.rs` and `lib.rs` 'crate roots' - contents of either form a module named 'crate' at the root of the crate’s module structure (module tree). Basically a module can be a single file, or a file in a folder. If it is in a folder, you need
+
+You can create module in two ways either a single file or a file within folder.
+
+## Code Structure
+
+Terms are: `crate`, `module`, `path`, `use`, `pub`, `as`.
 
 ## Tests
 
-Like all good languages, testing is built in to Rust.
+Like all good languages, testing is built in to Rust. Tests go in the file they are testing. The convention is to use a `tests` module in each file, annotating with `cfg(test)`:
 
-## Crates
-
-https://crates.io/
+```rust
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn addition_works() {
+        assert_eq!(2 + 2, 4);
+    }
+}
+```
 
 ## Ownership and References
+
+Rust does not have a garbage collector.
 
 ## Command line
 
@@ -300,11 +327,30 @@ fn main() {
 }
 ```
 
+## System Libraries
+
+```rust
+use std::{thread, time};
+
+fn main() {
+    let one_second = time::Duration::from_millis(1000);
+    print!("Hello, world!");
+    thread::sleep(one_second);
+    print!("Hello, world!");
+    thread::sleep(one_second);
+    print!("Hello, world!");
+}
+```
+
 ## Resources
 
 - [Actix api framework](https://actix.rs)
+- [Crates](https://crates.io/)
 
 ## References
 
 - [CleanCut Rust corse](https://github.com/CleanCut/rust_programming/)
 - [Rust loops](https://doc.rust-lang.org/1.6.0/book/loops.html)
+- [Modules](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)
+- [Rust unit test](https://doc.rust-lang.org/book/ch11-03-test-organization.html)
+- [Rust modules](https://medium.com/@tak2siva/rust-modules-explained-96809931bbbf)
