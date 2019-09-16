@@ -2,20 +2,28 @@
 
 One of the first things I like to do after gaining some familiarity with a language is a couple of katas, maybe Blackjack, an API of some sort. All test driven of course. Thats what we'll do here.
 
-What I find sorely missing in education is hierarchy of importances. Most resources give you every single bit of data related to a subject with equal stress. For example, with a written language a hierarchy of inportances would be:
+What I find sorely missing in education is hierarchy of knowledge. Most resources give you every single bit of data related to a subject with equal stress. For example, with a written language a hierarchy of knowledge would be:
 
 - alphabet
 - words
 - grammar
 - structure
 
-So, for a new language I first learn the alphabet (operators), words (reserved words), grammar (syntax), structure (files, modules, tests).
+So, for a new language I first learn the alphabet (operators), words (reserved words), grammar (syntax), structure (files, modules, tests). The things usually used 80% of the time should be **emphasized** whereas edge cases would probably be an aside or in an appendix.
 
 ## Definitions
 
 Rust is a [system language](https://en.wikipedia.org/wiki/System_programming_language), meaning it can be used for low level stuff such as Operating Systems, hardware and the like. That doesn't mean it is limited to those however.
 
-Why Rust? Type safety, concurrency, blazingly fast. Rust has a steep learning curve however.
+Why Rust? What makes Rust great?:
+
+- high level language with low level capabilities
+- strongly typed
+- no garbage collector, instead tracking it itself
+- concurrency built in
+- blazingly fast (because of the above)
+
+Rust has a steep learning curve however.
 
 ## Style
 
@@ -24,7 +32,7 @@ Rust has an opinionated coding style:
 - indentations are 4 spaces
 - variable names are snake case
 
-But, before fundamentals, lets talk about the build runner, documentation generator, test runner and package manager - Cargo.
+But, before the Rust fundamentals, lets talk about the build runner, documentation generator, test runner and package manager - Cargo.
 
 ## Cargo
 
@@ -52,7 +60,7 @@ version = "0.1.0"
 authors = ["Your Name <you@your-email.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+### See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 ```
@@ -65,7 +73,7 @@ fn main() {
 }
 ```
 
-First things first, the Cargo.toml file. This is the configuration file for your software. This has all the information about your project, the name, authors, version (semver), project name (used when imporiting files) etc. It is also where you add your dependencies.
+First things first, the Cargo.toml file. This is the configuration file for your software. This has all the information about your project, the name, authors, version (semver), project name (used when importing files) etc. It is also where other package dependencies are imported.
 
 The rust file that is generated is a 'hello world' by default.
 
@@ -349,7 +357,7 @@ fn main() {
 
 ## References
 
-- [CleanCut Rust corse](https://github.com/CleanCut/rust_programming/)
+- [CleanCut Rust course](https://github.com/CleanCut/rust_programming/)
 - [Rust loops](https://doc.rust-lang.org/1.6.0/book/loops.html)
 - [Modules](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)
 - [Rust unit test](https://doc.rust-lang.org/book/ch11-03-test-organization.html)
