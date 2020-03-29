@@ -40,15 +40,5 @@ mod tests {
 }
 
 pub fn is_alive(alive: bool, neighbours: i32) -> bool {
-  if alive {
-    if neighbours == 2 || neighbours == 3 {
-      return true;
-    }
-    return false;
-  } else {
-    if neighbours == 3 {
-      return true;
-    }
-    return false;
-  }
+  return alive && neighbours == 2 || neighbours == 3
 }

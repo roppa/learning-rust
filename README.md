@@ -350,6 +350,10 @@ fn main() {
 }
 ```
 
+## Tools
+
+- [Rust playground](https://play.rust-lang.org/)
+
 ## Resources
 
 - [Actix api framework](https://actix.rs)
