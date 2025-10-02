@@ -12,7 +12,7 @@ fn main() {
     change += 1;
     println!("This value is mutable, therefore changed {}", change);
 
-    let string = "Hello world!";
+    let string = "Hello world! This is a static string.";
     println!("{}", string);
 
     for ch in string.chars() {
